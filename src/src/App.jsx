@@ -1,8 +1,7 @@
-// 📄 src/App.jsx - Main Santiago Cargo Express Component
 import React, { useState } from 'react';
 import { Package, FileText, TrendingUp, Upload, Plus, Search, Edit3, Trash2, Eye, Download, BarChart3, DollarSign, AlertTriangle, CheckCircle, Calendar, MapPin, Clock, Users, Settings, Database, Smartphone, Monitor, MessageSquare, Camera, Send } from 'lucide-react';
 
-const SantiagoCargoSystem = () => {
+const App = () => {
   const [activeModule, setActiveModule] = useState('dashboard');
   const [searchTerm, setSearchTerm] = useState('');
   const [currency, setCurrency] = useState('USD');
@@ -49,13 +48,6 @@ const SantiagoCargoSystem = () => {
       totalShipments: 15,
       totalSpent: 1125.00
     }
-  ];
-
-  const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
-    { id: 'shipments', label: 'Envíos', icon: Package },
-    { id: 'customers', label: 'Clientes', icon: Users },
-    { id: 'tracking', label: 'Seguimiento', icon: MapPin }
   ];
 
   const formatCurrency = (amount) => {
@@ -258,7 +250,6 @@ const SantiagoCargoSystem = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -282,7 +273,6 @@ const SantiagoCargoSystem = () => {
       </header>
 
       <div className="flex">
-        {/* Sidebar */}
         <nav className="w-64 bg-white shadow-lg min-h-screen">
           <div className="p-6">
             <ul className="space-y-2">
@@ -313,7 +303,6 @@ const SantiagoCargoSystem = () => {
           </div>
         </nav>
 
-        {/* Main Content */}
         <main className="flex-1 p-8">
           {activeModule === 'dashboard' && renderDashboard()}
           {activeModule === 'shipments' && renderShipments()}
@@ -325,4 +314,4 @@ const SantiagoCargoSystem = () => {
   );
 };
 
-export default SantiagoCargoSystem;
+export default App;
